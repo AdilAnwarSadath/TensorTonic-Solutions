@@ -16,7 +16,7 @@ def precision_recall_at_k(recommended, relevant, k):
     precision = hits / k
     
     # Handle edge case where relevant list might be empty to prevent DivisionByZero
-    recall = hits / (len(relevant)+10e-16)
+    recall = hits / len(relevant) if len(relevant)>0 else 0
     
     # Return them as a two-element list
     return [precision, recall]
