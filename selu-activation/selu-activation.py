@@ -10,4 +10,4 @@ def selu(x, lam=1.0507009873554804934193349852946, alpha=1.673263242354377284817
     res = np.where(x>0, lam*x, lam*alpha*(np.exp(x)-1))
 
     
-    return np.round(res,7).tolist()
+    return np.round(res,4).tolist()
